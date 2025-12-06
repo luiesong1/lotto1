@@ -7,6 +7,6 @@ export type RoleStateType = string[];
 
 export const rolesState = atom<RoleStateType>({
   key: 'rolesState',
-  default: [''],
+  default: ['MASTER'],
   effects_UNSTABLE: [persistAtom],
 });
