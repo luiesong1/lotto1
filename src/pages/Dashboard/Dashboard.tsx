@@ -35,9 +35,9 @@ export function Dashboard() {
   const navigator = useNavigate();
 
   // ⛔ 백엔드 호출 비활성화 (skip: true 추가)
-  useLazyQuery(SEE_ALL_INQUIRY_HISTORY_BY_ADMIN, {
-    skip: true,
-  });
+  // useLazyQuery(SEE_ALL_INQUIRY_HISTORY_BY_ADMIN, {
+  //   skip: true,
+  // });
 
   useLazyQuery(SEE_PARTNERSHIP_INQUIRY_HISTORY, {
     skip: true,
