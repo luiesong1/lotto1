@@ -151,14 +151,7 @@ export function Inquiry() {
     SeeAllInquiryHistoryByAdminResponse,
     SeeAllInquiryHistoryByAdminParams
   >(SEE_ALL_INQUIRY_HISTORY_BY_ADMIN, {
-    onCompleted: (data) => {
-      setInquiryData(data.seeAllInquiryHistoryByAdmin.inquiries);
-      setTotalCount(data.seeAllInquiryHistoryByAdmin.totalCount);
-    },
-    onError: (e) => {
-      notification.error({ message: e.message });
-    },
-    fetchPolicy: 'no-cache',
+    skip: true,
   });
 
   useEffect(() => {
