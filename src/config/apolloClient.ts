@@ -74,7 +74,7 @@ const errorLink = onError(
       notification.error({
         message: '장기간 사용하지 않아 자동 로그아웃되었습니다.',
       });
-     // window.location.href = '/login';
+      window.location.href = '/login';
       return localStorage.setItem('accessToken', '');
     }
 

@@ -21,8 +21,7 @@ import { useRecoilValue } from 'recoil';
 import { rolesState } from 'recoil/atoms/roles';
 
 function Root() {
-  //const accessToken = localStorage.getItem('accessToken') ?? '';
-  const accessToken = "dev-token"; 
+  const accessToken = localStorage.getItem('accessToken') ?? '';
   const roles = useRecoilValue(rolesState);
 
   const CheckRole = (keyword: string) => {
