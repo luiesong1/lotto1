@@ -7,13 +7,23 @@ const typeDefs = gql`
 `;
 
 const resolvers = {
-  Query: { hello: () => "Hello from Vercel GraphQL" }
+  Query: { 
+    hello: () => "Hello from GraphQL on Vercel" 
+  }
 };
 
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 const startServer = apolloServer.start();
 
 export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+
+  if (req.method === 'OPTIONS') {
+    res.end();
+    return;
+  }
+
   await startServer;
   return apolloServer.createHandler({
     path: "/api/graphql",
@@ -21,5 +31,5 @@ export default async function handler(req, res) {
 }
 
 export const config = {
-  api: { bodyParser: false },
+  api: { bodyParser: false }
 };
